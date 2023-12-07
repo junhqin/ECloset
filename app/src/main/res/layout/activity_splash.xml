@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple"
-    tools:context=".SplashActivity">
+    tools:context=".Activity.SplashActivity">
     
     <TextView
         android:id="@+id/appName"
@@ -14,7 +14,7 @@
         android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:text="E衣柜，穿搭不用愁"
+        android:text="有E衣柜，穿搭不用愁"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"/>

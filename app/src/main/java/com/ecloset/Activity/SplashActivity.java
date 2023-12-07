@@ -1,4 +1,4 @@
-package com.ecloset;
+package com.ecloset.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.ecloset.R;
 
 public class SplashActivity extends AppCompatActivity {
     TextView appname;
@@ -23,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
         appname = findViewById(R.id.appName);
         lottie = findViewById(R.id.lottie);
 
-        appname.animate().translationY(-1400).setDuration(2700).setStartDelay(0);
+        appname.animate().translationY(-1700).setDuration(2700).setStartDelay(0);
         lottie.animate().translationX(2000).setDuration(2000).setStartDelay(2900);
 
         new Handler().postDelayed(new Runnable() {

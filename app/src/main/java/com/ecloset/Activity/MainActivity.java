@@ -1,8 +1,10 @@
-package com.ecloset;
+package com.ecloset.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.ecloset.R;
 
 public class MainActivity extends AppCompatActivity {
 
