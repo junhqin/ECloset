@@ -9,6 +9,9 @@
         android:icon="@drawable/clothes"
         android:title="搭配" />
     <item
+
+        android:title="" />
+    <item
         android:id="@+id/menu_closet"
         android:icon="@drawable/closet"
         android:title="衣柜" />

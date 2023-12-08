@@ -5,4 +5,8 @@
             @drawable/floating_background
         </item>
     </style>
+
+    <style name="MyBottomNavigationViewStyle" parent="Widget.Design.BottomNavigationView">
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>
