@@ -7,27 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity"
     >
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@drawable/button_background"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="E衣柜">
-
-        <!-- You can add other icons or views here as needed -->
-
+        app:title="E衣柜"
+        app:layout_constraintVertical_bias="0.0">
     </androidx.appcompat.widget.Toolbar>
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,19 +41,18 @@
 
 
         <!--        <com.google.android.material.bottomappbar.BottomAppBar-->
-<!--            android:id="@+id/app_bar"-->
-<!--            style="@style/Widget.MaterialComponents.BottomAppBar"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            app:elevation="8dp"-->
-<!--            app:fabAlignmentMode="center"-->
-<!--            app:fabAnimationMode="slide"-->
-<!--            app:fabCradleMargin="8dp"-->
-<!--            app:fabCradleRoundedCornerRadius="15dp"-->
-<!--            app:fabCradleVerticalOffset="5dp"-->
-<!--            app:hideOnScroll="true" />-->
-
+        <!--            android:id="@+id/app_bar"-->
+        <!--            style="@style/Widget.MaterialComponents.BottomAppBar"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="bottom"-->
+        <!--            app:elevation="8dp"-->
+        <!--            app:fabAlignmentMode="center"-->
+        <!--            app:fabAnimationMode="slide"-->
+        <!--            app:fabCradleMargin="8dp"-->
+        <!--            app:fabCradleRoundedCornerRadius="15dp"-->
+        <!--            app:fabCradleVerticalOffset="5dp"-->
+        <!--            app:hideOnScroll="true" />-->
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -65,12 +70,14 @@
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_menu"
-            style="@style/MyBottomNavigationViewStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/design_bottom_navigation_height"
             android:layout_gravity="bottom"
             app:labelVisibilityMode="labeled"
             app:layout_anchorGravity="bottom|center"
+            app:itemTextAppearanceActive="@style/bottom_tab_title_active"
+            app:itemTextAppearanceInactive="@style/bottom_tab_title_inactive"
+            app:itemIconSize="16dp"
             app:menu="@menu/bottom_nav_menu" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

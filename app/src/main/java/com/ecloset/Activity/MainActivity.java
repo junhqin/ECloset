@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         init();
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             case 2:
                 mbottomNavigationView.setSelectedItemId(R.id.menu_closet);
                 break;
-            case 4:
+            case 3:
                 mbottomNavigationView.setSelectedItemId(R.id.menu_mine);
                 break;
             default:
