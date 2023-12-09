@@ -6,7 +6,7 @@
 
 - **存在的问题**
 
-1. 
+1. 状态栏沉浸式问题
 
 - **已完成**
 
@@ -15,7 +15,13 @@
 
 3. 利用viewPager滑动Fragment（平时作业实现过了）
 
+4. 利用BottomSheetDialogFragment实现上传图片时选择上传方式
 
+- **新学到的**
+
+1. `setStyle` 是 `DialogFragment` 和 `BottomSheetDialogFragment` 中的一个方法，允许您设置对话框的样式和主题
+
+2. @Nullable` 表示标注的元素可以是 `null,@NonNull` 表示标注的元素不能是 `null
 
 
 
