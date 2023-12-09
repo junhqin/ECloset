@@ -7,7 +7,7 @@
     <item
         android:id="@+id/menu_clothes"
         android:icon="@drawable/clothes"
-        android:title="" />
+        android:title="逛逛" />
     <item
 
         android:title="" />
