@@ -25,6 +25,7 @@
 
 
         <LinearLayout
+            android:id="@+id/btn_photo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -50,7 +51,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/btn_camera">
 
             <ImageView
                 android:layout_width="40dp"

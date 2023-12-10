@@ -2,10 +2,13 @@ package com.ecloset.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -64,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void init(){
+
         btn_add = findViewById(R.id.floatingButton);
         mViewPager = findViewById(R.id.vp);
         mbottomNavigationView = findViewById(R.id.bottom_menu);
@@ -116,10 +120,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        //添加衣物的按钮
+        //�������İ�ť
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                requestPermission();
                 MyBottomSheetDialog myBottomSheetDialog = new MyBottomSheetDialog();
                 myBottomSheetDialog.show(getSupportFragmentManager(), "MyBottomSheetDialog");
             }
@@ -127,5 +132,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //动态申请权限
+    private void requestPermission() {
 
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1);
+        }
+    }
 }

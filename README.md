@@ -8,6 +8,12 @@
 
 1. 状态栏沉浸式问题
 
+2. 
+
+3. `if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) ` 返回null，但是直接调用startActivityForResult确实能调用相机
+
+   
+
 - **已完成**
 
 1. 利用lottie实现启动App的动画（12.8）
@@ -17,11 +23,17 @@
 
 4. 利用BottomSheetDialogFragment实现上传图片时选择上传方式
 
+5. 调用相机和相册功能
+
 - **新学到的**
 
 1. `setStyle` 是 `DialogFragment` 和 `BottomSheetDialogFragment` 中的一个方法，允许您设置对话框的样式和主题
 
 2. @Nullable` 表示标注的元素可以是 `null,@NonNull` 表示标注的元素不能是 `null
+
+3. 获取照相机及保存的代码参考https://developer.android.com/training/camera/photobasics?hl=zh-cn#java
+
+4. 
 
 
 
