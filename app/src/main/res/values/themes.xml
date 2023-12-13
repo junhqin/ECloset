@@ -1,15 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.ECloset" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Base.Theme.ECloset" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
+        <!-- 注释指定主题颜色，跟随系统dynamic color       -->
+<!--                <item name="colorPrimary">@drawable/button_background</item>-->
+<!--                <item name="colorPrimaryDark">@drawable/button_background</item>-->
+<!--                <item name="colorAccent">@drawable/button_background</item>-->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:listPreferredItemHeightSmall">12sp</item>
-
-
     </style>
+
+    <style name="PopupMenu.Overflow" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <!--false表示弹出框位置位于toolbar下面-->
+        <item name="overlapAnchor">false</item>
+    </style>
+
 
     <style name="Theme.ECloset" parent="Base.Theme.ECloset" />
 </resources>

@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.ecloset.Adapter.vpAdapter;
 import com.ecloset.dialog.MyBottomSheetDialog;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private vpAdapter mStateVpAdapter;
     private List<Fragment> mFragmentList;
     private FloatingActionButton btn_add;
-
+    private TextView tv_title;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void init(){
-
+        tv_title = findViewById(R.id.title);
         btn_add = findViewById(R.id.floatingButton);
         mViewPager = findViewById(R.id.vp);
         mbottomNavigationView = findViewById(R.id.bottom_menu);
@@ -103,24 +104,28 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if( item.getItemId()==R.id.menu_home){
                     mViewPager.setCurrentItem(0);
+                    tv_title.setText("主页");
                 }
 
                 else if (item.getItemId()==R.id.menu_clothes)
                 {
                     mViewPager.setCurrentItem(1);
+                    tv_title.setText("逛逛");
                 }
 
                 else if (R.id.menu_closet== item.getItemId()) {
                     mViewPager.setCurrentItem(2);
+                    tv_title.setText("衣橱");
                 }
                 else if (R.id.menu_mine== item.getItemId()) {
                     mViewPager.setCurrentItem(3);
+                    tv_title.setText("我的");
                 }
                 return true;
 
             }
         });
-        //�������İ�ť
+
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

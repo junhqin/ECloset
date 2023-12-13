@@ -10,4 +10,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="red">#E76160</color>
     <color name="grey">#ababab</color>
+    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimaryDark">#0288D1</color>
+    <color name="colorAccent">#03A9F4</color>
 </resources>

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.ecloset.Activity.AddClothesActivity;
 import com.ecloset.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
@@ -87,16 +89,32 @@ public class MyBottomSheetDialog extends BottomSheetDialogFragment {
 //        }
     }
 
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-//            Bundle extras = data.getExtras();
-//            if (extras != null) {
-//                Bitmap imageBitmap = (Bitmap) extras.get("data");
-//                // 使用返回的位图数据，比如显示在 ImageView 上或其他处理
-//            }
-//        }
-//    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == CROP_PHOTO_TAKE) {
+                // 处理拍照返回的数据
+                Bundle extras = data.getExtras();
+                if (extras != null) {
+                    Bitmap imageBitmap = (Bitmap) extras.get("data");
+                    // 创建要传递的新 Intent
+                    Intent intent = new Intent(getActivity(), AddClothesActivity.class);
+                    intent.putExtra("bitmap", imageBitmap); // 传递 Bitmap
+                    startActivity(intent);
+                }
+            } else if (requestCode == CROP_PHOTO_LOCAL) {
+                // 处理相册选择返回的数据
+                Uri imageUri = data.getData();
+                // 创建要传递的新 Intent
+                Intent intent = new Intent(getActivity(), AddClothesActivity.class);
+                intent.setData(imageUri); // 传递 Uri
+                startActivity(intent);
+            }
+        }
+    }
+
 
     @Override
     public void onStart() {

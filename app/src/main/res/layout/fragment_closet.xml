@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context=".Fragment.ClosetFragment">
-
+    <ListView
+        android:id="@+id/lv_left"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.22"
+        android:background="#11000000"
+        android:scrollbars="none" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/closet_list"
-        android:layout_width="match_parent"
+        android:layout_weight="0.78"
+        android:layout_width="0dp"
         android:layout_height="match_parent" />
 
 
-</FrameLayout>
+</LinearLayout>
+

@@ -9,4 +9,11 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+
+    <string-array name="clothes_array">
+        <item>上衣</item>
+        <item>帽子</item>
+        <item>裤子</item>
+        <item>鞋</item>
+    </string-array>
 </resources>
