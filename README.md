@@ -33,7 +33,7 @@
 
 3. 获取照相机及保存的代码参考https://developer.android.com/training/camera/photobasics?hl=zh-cn#java
 
-4. 
+4. 当你调用 `notifyDataSetChanged()` 方法时，`ListView` 会认为所有的可视化数据都可能已经改变，并将对可见区域内的==每个列表项==调用 `getView` 方法。
 
 
 
