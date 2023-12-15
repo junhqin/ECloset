@@ -13,7 +13,7 @@ import com.ecloset.R;
 public class TypeLeftAdapter extends BaseAdapter {
     private Context mContext;
     private int mSelect = 0;//选中项
-    private String[] titles = new String[]{"上衣", "下装", "外套", "配件", "包包", "装扮"};
+    private String[] titles = new String[]{"上衣", "下装", "外套", "配件", "包包", "配饰","鞋子"};
     public TypeLeftAdapter(Context mContext) {
         this.mContext = mContext;
     }
@@ -50,12 +50,19 @@ public class TypeLeftAdapter extends BaseAdapter {
 
         if (mSelect == position) {
             convertView.setBackgroundResource(R.drawable.type_item_background_selector);  //选中项背景
-            holder.tv_name.setTextColor(Color.parseColor("#fd3f3f"));
+            holder.tv_name.setTextColor(Color.parseColor("#BB86FC"));
         } else {
             convertView.setBackgroundResource(R.drawable.bg2);  //其他项背景
             holder.tv_name.setTextColor(Color.parseColor("#323437"));
         }
         return convertView;
+    }
+    public String changeSelected(int positon) { //刷新方法
+        if (positon != mSelect) {
+            mSelect = positon;
+            notifyDataSetChanged();
+        }
+        return titles[positon];
     }
 
     static class ViewHolder {

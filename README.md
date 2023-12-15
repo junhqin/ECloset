@@ -8,8 +8,6 @@
 
 1. 状态栏沉浸式问题
 
-2. 
-
 3. `if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) ` 返回null，但是直接调用startActivityForResult确实能调用相机
 
    
@@ -63,3 +61,7 @@
 5. 对于原始bottomNavigationView定制化可以看这条博客:[博客](https://blog.csdn.net/u012400885/article/details/110791780?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170205354816800197072112%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=170205354816800197072112&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-1-110791780-null-null.142^v96^pc_search_result_base7&utm_term=%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9BottomNavigationView%E9%AB%98%E5%BA%A6&spm=1018.2226.3001.4187)
 
 6. 模拟机对spinner的下拉框会有挤压得情况发生，放在真机上就是正常显示。
+
+7. 
+
+`RecyclerView` 中实现上下文菜单相对于 `ListView` 来说稍显复杂，本身不支持，只能自己实现触发上下文菜单的逻辑。

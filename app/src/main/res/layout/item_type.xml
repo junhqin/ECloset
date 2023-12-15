@@ -12,5 +12,6 @@
         android:layout_centerInParent="true"
         android:gravity="center"
         android:padding="13dp"
+        android:textStyle="bold"
         android:text="小裙子" />
 </RelativeLayout>

@@ -6,7 +6,9 @@
 <!--                <item name="colorPrimary">@drawable/button_background</item>-->
 <!--                <item name="colorPrimaryDark">@drawable/button_background</item>-->
 <!--                <item name="colorAccent">@drawable/button_background</item>-->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="colorAccent">@color/purple_500</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>

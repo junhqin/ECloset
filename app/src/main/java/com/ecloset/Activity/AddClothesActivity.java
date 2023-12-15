@@ -130,6 +130,6 @@ public class AddClothesActivity extends ToolbarActivity {
         }
 
         Toast.makeText(AddClothesActivity.this, "保存成功",Toast.LENGTH_SHORT).show();
-//        finish();
+        finish();
     }
 }

@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent("LoginSuccess");
                     intent.putExtra("username", username);
                     startActivity(intent);
+                    finish();
                 }
                 else{
                     Toast.makeText(LoginActivity.this,"用户名和密码错误",Toast.LENGTH_SHORT).show();

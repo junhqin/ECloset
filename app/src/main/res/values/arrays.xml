@@ -12,8 +12,11 @@
 
     <string-array name="clothes_array">
         <item>上衣</item>
-        <item>帽子</item>
-        <item>裤子</item>
-        <item>鞋</item>
+        <item>下装</item>
+        <item>外套</item>
+        <item>配件</item>
+        <item>包包</item>
+        <item>配饰</item>
+        <item>鞋子</item>
     </string-array>
 </resources>

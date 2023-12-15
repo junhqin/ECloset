@@ -2,15 +2,21 @@ package com.ecloset.Bean;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //import com.example.findlist.bean.TODO;
 
 public class MySqliteDB extends SQLiteOpenHelper {
     private static final String DB_NAME = "ecloset.db";
     private static  Context cont;
+
+
     //这里把数据库写死了
     public MySqliteDB(Context context){
         super(context,DB_NAME,null,1);
@@ -49,6 +55,40 @@ public class MySqliteDB extends SQLiteOpenHelper {
         values.put("category",category);
         db.insert("clothes",null,values);
     }
+
+    public List<clothes> getClothes(String type){
+        List<clothes> list_clothes = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selection = "category = ?";
+        String[] selectionArgs = {type};
+        Cursor cursor = db.query(
+                "clothes", // 表名
+                new String[]{"id", "name", "category", "imgPath"}, // 返回的列
+                selection, // WHERE 子句
+                selectionArgs, // WHERE 子句的参数
+                null, // GROUP BY
+                null, // HAVING
+                null  // ORDER BY
+        );
+
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    String name = cursor.getString(cursor.getColumnIndex("name"));
+                    String imgPath = cursor.getString(cursor.getColumnIndex("imgPath"));
+
+                    clothes clothesItem = new clothes(name, type, imgPath);
+                    list_clothes.add(clothesItem);
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+        }
+        db.close();
+
+        return list_clothes;
+
+    }
+
 
 
 //    public void delete(String taskId){
