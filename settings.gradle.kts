@@ -19,4 +19,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ECloset"
 include(":app")
- 
+include (":opendanmaku")

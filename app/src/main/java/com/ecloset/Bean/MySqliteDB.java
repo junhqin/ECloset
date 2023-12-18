@@ -17,18 +17,35 @@ public class MySqliteDB extends SQLiteOpenHelper {
     private static  Context cont;
 
 
-    //这里把数据库写死了
     public MySqliteDB(Context context){
         super(context,DB_NAME,null,1);
         cont = context;
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //创建衣服表
         db.execSQL("create table clothes("+
                         "id integer primary key autoincrement,"+
                         "name text,"+
                         "category text,"+
                         "imgPath text);");
+
+        //创建贴子表
+        db.execSQL("create table posts("+
+                "post_id integer primary key autoincrement,"+
+                "poster_name text,"+
+                "saying text,"+
+                "img text,"+
+                "post_title text,"+
+                "likes integer,"+
+                "comments integer);");
+
+        //创建评论表
+        db.execSQL("create table comments(" +
+                "comment_id integer primary key autoincrement," +
+                "post_id integer," +
+                "content text," +
+                "FOREIGN KEY(post_id) REFERENCES posts(post_id));");
     }
 
     @Override
